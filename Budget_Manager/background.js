@@ -29,3 +29,7 @@ chrome.contextMenus.onClicked.addListener(({ menuItemId, selectionText }) => {
         });
       });
 });
+
+chrome.storage.onChanged.addListener(({ total }) => {
+  if (total) chrome.action.setBadgeText({ text: total.newValue.toString() });
+});
