@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "WikIt",
+  "version": "1.0",
+  "description": "Search in Wikipedia!",
+  "icons": {
+    "128": "icon128.png",
+    "48": "icon48.png",
+    "16": "icon16.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["tabs", "contextMenus"]
+}
