@@ -23,6 +23,5 @@
       "css": ["content.css"]
     }
   ],
-  "permissions": ["tabs"],
-  "host_permissions": ["https://developer.chrome.com/*"]
+  "permissions": ["tabs", "declarativeContent"]
 }
