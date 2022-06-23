@@ -15,5 +15,13 @@
   },
   "background": {
     "service_worker": "background.js"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://developer.chrome.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["tabs"],
+  "host_permissions": ["https://developer.chrome.com/*"]
 }
