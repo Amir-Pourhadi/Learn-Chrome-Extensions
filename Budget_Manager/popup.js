@@ -1,9 +1,11 @@
 const totalSpan = document.querySelector("span#total");
+const limitSpan = document.querySelector("span#limit");
 const amountInput = document.querySelector("input#amount");
 const formEl = document.querySelector("form");
 
-chrome.storage.sync.get("total", ({ total }) => {
-  totalSpan.innerText = total;
+chrome.storage.sync.get(["total", "limit"], ({ total, limit }) => {
+  totalSpan.innerText = total || 0;
+  limitSpan.innerText = limit || 0;
 });
 
 formEl.addEventListener("submit", (event) => {
