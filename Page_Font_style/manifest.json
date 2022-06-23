@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Page Font Style",
+  "version": "1.0",
+  "description": "Change font style on developers.chrome.com",
+  "icons": {
+    "128": "icon128.png",
+    "48": "icon48.png",
+    "16": "icon16.png"
+  },
+  "action": {
+    "default_icon": "icon16.png",
+    "default_popup": "popup.html",
+    "default_title": "Page Font Style"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
