@@ -1,8 +1,16 @@
-chrome.action.disable();
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.action.disable();
 
-chrome.runtime.onMessage.addListener(({ todo }) => {
-  if (todo === "ShowAction")
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      chrome.action.show(tabs[0].id);
-    });
+  chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
+    chrome.declarativeContent.onPageChanged.addRules([
+      {
+        conditions: [
+          new chrome.declarativeContent.PageStateMatcher({
+            pageUrl: { hostSuffix: "developer.chrome.com", schemes: ["https"] },
+          }),
+        ],
+        actions: [new chrome.declarativeContent.ShowAction()],
+      },
+    ]);
+  });
 });
